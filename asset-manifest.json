@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ddaprax-react/static/css/main.3244134e.css",
-    "main.js": "/ddaprax-react/static/js/main.2484b731.js",
+    "main.js": "/ddaprax-react/static/js/main.be6e916f.js",
     "static/js/787.fabdc492.chunk.js": "/ddaprax-react/static/js/787.fabdc492.chunk.js",
     "static/media/logo.svg": "/ddaprax-react/static/media/logo.f0001d0cb8f018aa25555bc8309538fb.svg",
     "index.html": "/ddaprax-react/index.html",
     "main.3244134e.css.map": "/ddaprax-react/static/css/main.3244134e.css.map",
-    "main.2484b731.js.map": "/ddaprax-react/static/js/main.2484b731.js.map",
+    "main.be6e916f.js.map": "/ddaprax-react/static/js/main.be6e916f.js.map",
     "787.fabdc492.chunk.js.map": "/ddaprax-react/static/js/787.fabdc492.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3244134e.css",
-    "static/js/main.2484b731.js"
+    "static/js/main.be6e916f.js"
   ]
 }
