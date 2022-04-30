@@ -1,0 +1,20 @@
+.language-switcher {
+    padding: 0 15px;
+}
+.language-switcher-items {
+    display: flex;
+    align-items: center;
+}
+.language-switcher-item {
+    padding: 0 5px;
+    font-size: 12px;
+}
+.language-switcher-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #444;
+}
+.language-switcher-link.active {
+    color: #ff1531;
+}
