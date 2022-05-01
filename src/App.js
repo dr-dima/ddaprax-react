@@ -9,16 +9,15 @@ import ProductPage from './routes/ProductPage';
 import {LocalContextProvider} from "./contexts/LocalContextProvider";
 
 function App() {
-
   return (
       <LocalContextProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="posts" element={<Posts />} />
-            <Route path="posts/:id" element={<PostPage />} />
-            <Route path="products" element={<Products />} />
-            <Route path="products/:id" element={<ProductPage />} />
+            <Route basename={`/${process.env.PUBLIC_URL}`} path={`/${process.env.PUBLIC_URL}`} element={<Home />} />
+            <Route path={`${process.env.PUBLIC_URL}/posts`} element={<Posts />} />
+            <Route path={`${process.env.PUBLIC_URL}/posts/:id`} element={<PostPage />} />
+            <Route path={`${process.env.PUBLIC_URL}/products`} element={<Products />} />
+            <Route path={`${process.env.PUBLIC_URL}/products/:id`} element={<ProductPage />} />
           </Routes>
         </BrowserRouter>
       </LocalContextProvider>

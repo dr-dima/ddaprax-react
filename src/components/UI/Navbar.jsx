@@ -8,17 +8,17 @@ const Navbar = () => {
         <nav className='main_menu'>
             <ul>
                 <li>
-                    <NavLink to="/">
+                    <NavLink to={`${process.env.PUBLIC_URL}/`} end>
                         <FormattedMessage id="app.menu.home" />
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/posts">
+                    <NavLink to={`${process.env.PUBLIC_URL}/posts`}>
                         <FormattedMessage id="app.menu.posts" />
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/products">
+                    <NavLink to={`${process.env.PUBLIC_URL}/products`}>
                         <FormattedMessage id="app.menu.products" />
                     </NavLink>
                 </li>

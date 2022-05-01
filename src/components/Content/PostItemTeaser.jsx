@@ -1,10 +1,11 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
 import { displayFormatedTimestamp } from '../../utils/postsHelper';
 
 const PostItemTeaser = (props) => {
     const navigate = useNavigate();
+    const intl = useIntl();
 
     return (
         <div className='post_teaser'>
@@ -17,11 +18,11 @@ const PostItemTeaser = (props) => {
                 </div>
                 <div className='post_teaser__more'>
                     <a
-                        href={`/posts/${props.post.node_id}`}
-                        title={<FormattedMessage id="app.links.more" />}
+                        href={`${process.env.PUBLIC_URL}/posts/${props.post.node_id}`}
+                        title={intl.formatMessage({id: "app.links.more"})}
                         onClick={(e) => {
                             e.preventDefault();
-                            navigate(`/posts/${props.post.node_id}`);
+                            navigate(`${process.env.PUBLIC_URL}/posts/${props.post.node_id}`);
                         }}
                     >
                         <FormattedMessage id="app.links.more" />

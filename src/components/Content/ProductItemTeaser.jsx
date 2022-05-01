@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { addDomainToImg } from '../../utils/postsHelper';
 import Modal from '../UI/Modal/Modal';
 import ProductOrderForm from './Forms/ProductOrderForm';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 const ProductItemTeaser = ({product}) => {
     const navigate = useNavigate();
+    const intl = useIntl();
 
     const [isModalForm, setIsModalForm] = useState(false);
     const [modalActive, setModalActive] = useState(false);
@@ -32,11 +33,11 @@ const ProductItemTeaser = ({product}) => {
             <div className='product__teaser__content'>
                 <div className='product__teaser__title'>
                     <a
-                        href={`/products/${product.node_id}`}
+                        href={`${process.env.PUBLIC_URL}/products/${product.node_id}`}
                         title={product.title}
                         onClick={(e) => {
                             e.preventDefault();
-                            navigate(`/products/${product.node_id}`);
+                            navigate(`${process.env.PUBLIC_URL}/products/${product.node_id}`);
                         }}
                     >
                         {product.title}
@@ -72,26 +73,25 @@ const ProductItemTeaser = ({product}) => {
                 </div>
                 <div className="product__teaser__btns">
                     <a
-                        href={`/products/${product.node_id}`}
-                        title={<FormattedMessage id="app.btns.more" />}
+                        href={`${process.env.PUBLIC_URL}/products/${product.node_id}`}
+                        title={intl.formatMessage({id: "app.btns.more"})}
                         className='btn'
                         onClick={(e) => {
                             e.preventDefault();
-                            navigate(`/products/${product.node_id}`);
+                            navigate(`${process.env.PUBLIC_URL}/products/${product.node_id}`);
                         }}
                     >
                         <FormattedMessage id="app.btns.more" />
                     </a>
-                    <a
-                        href="#"
+                    <span
                         className='btn btn-style-2'
-                        title={<FormattedMessage id="app.btns.to_order" />}
+                        title={intl.formatMessage({id: "app.btns.to_order"})}
                         onClick={(e) => {
                             openModalForm(e);
                         }}
                     >
                         <FormattedMessage id="app.btns.to_order" />
-                    </a>
+                    </span>
                 </div>
                 {isModalForm && modalForm}
             </div>
